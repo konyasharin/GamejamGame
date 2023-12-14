@@ -4,15 +4,41 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public float speed = 1.0f;
+    private Animator animator;
+    private Rigidbody2D rb;
+    private SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        this.Move();
+    }
+
+    private void Move()
+    {
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float VerticalInput = Input.GetAxis("Vertical");
+        Vector3 vector = new Vector3(horizontalInput * speed, VerticalInput * speed, 0);
+
+        if(horizontalInput < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else if(horizontalInput > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+
+        animator.SetFloat("current speed", vector.magnitude);
+
+        transform.Translate(vector);
     }
 }
