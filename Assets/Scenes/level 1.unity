@@ -1422,6 +1422,7 @@ GameObject:
   - component: {fileID: 671934658}
   - component: {fileID: 671934659}
   - component: {fileID: 671934660}
+  - component: {fileID: 671934661}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1567,7 +1568,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35cebf3f9e23011459fe78b109f7cd41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.015
+  speed: 0.01
+  health: 100
+  healthBar: {fileID: 1108649813}
+--- !u!114 &671934661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671934653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dced5c51d4d425845a4464a715a51dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &712245674
 GameObject:
   m_ObjectHideFlags: 0
@@ -2778,35 +2793,15 @@ GameObject:
   - component: {fileID: 1648423411}
   - component: {fileID: 1648423410}
   - component: {fileID: 1648423409}
-  - component: {fileID: 1648423408}
+  - component: {fileID: 1648423413}
+  - component: {fileID: 1648423412}
   m_Layer: 0
-  m_Name: Bringer-of-Death_Idle_1
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &1648423408
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1648423407}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 895d6bb36fdb1484f9229719a0b3cd12, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!70 &1648423409
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2883,13 +2878,47 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648423407}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.96, y: 0.27, z: 0}
+  m_LocalPosition: {x: 5.96, y: 0.27, z: -1}
   m_LocalScale: {x: 4.842256, y: 4.5660124, z: 4.5660124}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1648423412
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648423407}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: da7f90724ccbf144da37234ce5c21db0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1648423413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648423407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9c9dbd5a2737cb4fb7f2b69ca3491d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!1 &1724883442
 GameObject:
   m_ObjectHideFlags: 0
